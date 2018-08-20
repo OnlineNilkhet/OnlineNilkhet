@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Online Nilkhet</title>
+    <title>Home | E-Shopper</title>
     <link href="{{asset('frontend/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('frontend/css/font-awesome.min.css')}}" rel="stylesheet">
     <link href="{{asset('frontend/css/prettyPhoto.css')}}" rel="stylesheet">
@@ -17,7 +17,7 @@
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->       
-    <link rel="shortcut icon" href="images/ico/favicon.ico">
+   <link rel="shortcut icon" href="images/ico/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{URL::to('frontend/images/ico/apple-touch-icon-144-precomposed.png')}}">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{URL::to('frontend/images/ico/apple-touch-icon-114-precomposed.png')}}">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{URL::to('frontend/images/ico/apple-touch-icon-72-precomposed.png')}}">
@@ -57,7 +57,7 @@
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="logo pull-left">
-                            <a href="index.html"><img src="images/home/logo.png" alt="" /></a>
+                            <a href="index.html"><img src="{{asset('frontend/images/home/logo.png')}}" alt="" /></a>
                         </div>
                         <div class="btn-group pull-right">
                             <div class="btn-group">
@@ -143,71 +143,47 @@
         </div><!--/header-bottom-->
     </header><!--/header-->
     
-    <section id="slider"><!--slider-->
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div id="slider-carousel" class="carousel slide" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                            <li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
-                            <li data-target="#slider-carousel" data-slide-to="1"></li>
-                            <li data-target="#slider-carousel" data-slide-to="2"></li>
-                        </ol>
-                        
-                        <div class="carousel-inner">
-                            <div class="item active">
-                                <div class="col-sm-6">
-                                    <h1><span>Online Nilkhet</span></h1>
-                                    <h2></h2>
-                                    <p></p>
-                                    <button type="button" class="btn btn-default get">Get it now</button>
-                                </div>
-                                <div class="col-sm-6">
-                                    <img src="{{asset('frontend/images/home/girl1.jpg')}}" class="girl img-responsive" alt="" />
-                                    <img src="{{asset('frontend/images/home/pricing.png')}}"  class="pricing" alt="" />
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="col-sm-6">
-                                    <h1><span>Online Nilkhet</span></h1>
-                                    <h2></h2>
-                                    <p> </p>
-                                    <button type="button" class="btn btn-default get"></button>
-                                </div>
-                                <div class="col-sm-6">
-                                    <img src="{{asset('frontend/images/home/girl2.jpg')}}" class="girl img-responsive" alt="" />
-                                    <img src="{{asset('frontend/images/home/pricing.png')}}"  class="pricing" alt="" />
-                                </div>
-                            </div>
-                            
-                            <div class="item">
-                                <div class="col-sm-6">
-                                    <h1><span>E</span></h1>
-                                    <h2></h2>
-                                    <p></p>
-                                    <button type="button" class="btn btn-default get"></button>
-                                </div>
-                                <div class="col-sm-6">
-                                    <img src="{{asset('frontend/images/home/girl3.jpg')}}" class="girl img-responsive" alt="" />
-                                    <img src="{{asset('frontend/images/home/pricing.png')}}" class="pricing" alt="" />
-                                </div>
-                            </div>
-                            
+   <?php 
+    $all_published_slider=DB::table('tb1_slider')
+    ->where('publication_status',1)
+    ->get(); 
+
+?>  
+<section id="slider"><!--slider-->
+    <div class="container">
+      <div class="row"> 
+
+         <div id="carousel-example-generic" class="carousel slide " data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    @foreach( $all_published_slider as $v_slider )
+                        <li data-target="#carousel-example-generic" data-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : '' }}"></li>
+                    @endforeach
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    @foreach( $all_published_slider as $v_slider )
+                        <div class="item {{ $loop->first ? ' active' : '' }}" >
+                            <img src="{{ $v_slider->slider_image }}"  style="width: 100%; height: 200pz;" ">
                         </div>
-                        
-                        <a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
-                            <i class="fa fa-angle-left"></i>
-                        </a>
-                        <a href="#slider-carousel" class="right control-carousel hidden-xs" data-slide="next">
-                            <i class="fa fa-angle-right"></i>
-                        </a>
-                    </div>
-                    
+                    @endforeach
                 </div>
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
             </div>
-        </div>
-    </section><!--/slider-->
-    
+
+         </div>
+     </div>
+ </section>
+ <!-- end slide section -->﻿
     <section>
         <div class="container">
             <div class="row">
@@ -216,26 +192,24 @@
                         <h2>Category</h2>
                         <div class="panel-group category-products" id="accordian"><!--category-productsr-->
                             <div class="panel panel-default">
-                                <?php
+                             <?php
                                 $all_publisher_category=DB::table('tb1_category')
                                         ->where('publication_status',1)
                                         ->get();
-
-
-                            foreach($all_publisher_category as $v_category){?>
+                                 foreach($all_publisher_category as $v_category){?>
                                 <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title"><a href="#">{{$v_category->category_name}}</a></h4>
                                 </div>
                             </div>
-                            <?php } ?>  
+                         <?php } ?> 
 
+                     </div>
+                            
                         </div><!--/category-products-->
-</div>
-                          <div class="brands_products"><!--brands_products-->
+                    
+                        <div class="brands_products"><!--brands_products-->
                             <h2>Vendors</h2>
-
-
                             <div class="brands-name">
                                <ul class="nav nav-pills nav-stacked" >
                                      <?php
@@ -247,9 +221,10 @@
                                 
 
                             <?php } ?>  
-                        </ul>
+                                </ul>
                             </div>
-                        </div><!--/brands_products-->   
+                        </div><!--/brands_products-->
+                        
                         <div class="price-range"><!--price-range-->
                             <h2>Price Range</h2>
                             <div class="well text-center">
@@ -259,17 +234,17 @@
                         </div><!--/price-range-->
                         
                         <div class="shipping text-center"><!--shipping-->
-                            <img src="images/home/shipping.jpg" alt="" />
+                            <img src="{{asset('frontend/images/home/shipping.jpg')}}" alt="" />
                         </div><!--/shipping-->
                     
-            
-            </div>
-        </div></div>
-        
+                    </div>
+                </div>
+                
                 <div class="col-sm-9 padding-right">
                     <div class="features_items"><!--features_items-->
-        
-                            @yield('content')
+      
+                  @yield('content')
+                    
                 </div>
             </div>
         </div>
@@ -290,7 +265,7 @@
                             <div class="video-gallery text-center">
                                 <a href="#">
                                     <div class="iframe-img">
-                                        <img src="{{URL::to('frontend/images/home/iframe1.png')}}" alt="" />
+                                        <img src="{{asset('frontend/images/home/iframe1.png')}}" alt="" />
                                     </div>
                                     <div class="overlay-icon">
                                         <i class="fa fa-play-circle-o"></i>
@@ -305,7 +280,7 @@
                             <div class="video-gallery text-center">
                                 <a href="#">
                                     <div class="iframe-img">
-                                        <img src="{{URL::to('frontend/images/home/iframe2.png')}}" alt="" />
+                                        <img src="{{asset('frontend/images/home/iframe2.png')}}" alt="" />
                                     </div>
                                     <div class="overlay-icon">
                                         <i class="fa fa-play-circle-o"></i>
@@ -320,7 +295,7 @@
                             <div class="video-gallery text-center">
                                 <a href="#">
                                     <div class="iframe-img">
-                                        <img src="{{URL::to('frontend/images/home/iframe3.png')}}" alt="" />
+                                        <img src="{{asset('frontend/images/home/iframe3.png')}}" alt="" />
                                     </div>
                                     <div class="overlay-icon">
                                         <i class="fa fa-play-circle-o"></i>
@@ -335,7 +310,7 @@
                             <div class="video-gallery text-center">
                                 <a href="#">
                                     <div class="iframe-img">
-                                        <img src="{{URL::to('frontend/images/home/iframe4.png')}}" alt="" />
+                                        <img src="{{asset('frontend/images/home/iframe4.png')}}" alt="" />
                                     </div>
                                     <div class="overlay-icon">
                                         <i class="fa fa-play-circle-o"></i>
@@ -348,7 +323,7 @@
                     </div>
                     <div class="col-sm-3">
                         <div class="address">
-                            <img src="{{URL::to('frontend/images/home/map.png')}}" alt="" />
+                            <img src="{{asset('frontend/images/home/map.png')}}" alt="" />
                             <p>505 S Atlantic Ave Virginia Beach, VA(Virginia)</p>
                         </div>
                     </div>
@@ -434,7 +409,7 @@
     </footer><!--/Footer-->
     
 
-  
+   
     <script src="{{asset('frontend/js/jquery.js')}}"></script>
     <script src="{{asset('frontend/js/bootstrap.min.js')}}"></script>
     <script src="{{asset('frontend/js/jquery.scrollUp.min.js')}}"></script>
