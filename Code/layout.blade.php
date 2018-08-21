@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Home | E-Shopper</title>
+    <title>Home | Online Nilkhet</title>
     <link href="{{asset('frontend/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('frontend/css/font-awesome.min.css')}}" rel="stylesheet">
     <link href="{{asset('frontend/css/prettyPhoto.css')}}" rel="stylesheet">
@@ -150,40 +150,56 @@
 
 ?>  
 <section id="slider"><!--slider-->
-    <div class="container">
-      <div class="row"> 
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div id="slider-carousel" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#slider-carousel" data-slide-to="1"></li>
+                            <li data-target="#slider-carousel" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                                <?php 
+                                $all_published_slider=DB::table('tb1_slider')
+                                            ->where('publication_status',1)
+                                            ->get();
+                                $i=1;
+                                foreach ($all_published_slider as $v_slider) {
+                                            if($i==1){
 
-         <div id="carousel-example-generic" class="carousel slide " data-ride="carousel">
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    @foreach( $all_published_slider as $v_slider )
-                        <li data-target="#carousel-example-generic" data-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : '' }}"></li>
-                    @endforeach
-                </ol>
-
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner" role="listbox">
-                    @foreach( $all_published_slider as $v_slider )
-                        <div class="item {{ $loop->first ? ' active' : '' }}" >
-                            <img src="{{ $v_slider->slider_image }}"  style="width: 100%; height: 200pz;" ">
+                                            ?>
+                            <div class="item active">
+                            <?php } else {?>
+                            <div class="item">
+                            <?php } ?>
+                                <div class="col-sm-4">
+                                    <h1><span>O</span>NlineNilkhet</h1>
+                                    <h2>Free E-Commerce Template</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                                    <button type="button" class="btn btn-default get">Get it now</button>
+                                </div>
+                                <div class="col-sm-8">
+                                    <img src="{{URL::to($v_slider->slider_image)}}" class="girl img-responsive" alt="" />
+                                  
+                                </div>
+                            </div>
+                            <?php $i++; } ?>
                         </div>
-                    @endforeach
+                        
+                           
+                        <a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                        <a href="#slider-carousel" class="right control-carousel hidden-xs" data-slide="next">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    </div>
+                    
                 </div>
-                <!-- Controls -->
-                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
             </div>
-
-         </div>
-     </div>
- </section>
- <!-- end slide section -->﻿
+        </div>
+    </section><!--/slider-->
     <section>
         <div class="container">
             <div class="row">
@@ -199,7 +215,7 @@
                                  foreach($all_publisher_category as $v_category){?>
                                 <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <h4 class="panel-title"><a href="#">{{$v_category->category_name}}</a></h4>
+                                    <h4 class="panel-title"><a href="{{URL::to('/product_by_category/'.$v_category->category_id)}}">{{$v_category->category_name}}</a></h4>
                                 </div>
                             </div>
                          <?php } ?> 
@@ -213,11 +229,12 @@
                             <div class="brands-name">
                                <ul class="nav nav-pills nav-stacked" >
                                      <?php
-                                $all_vendor=DB::table('tb1_vendor')                                       
+                                $all_vendor=DB::table('tb1_vendor') 
+                                                                             
                                         ->get();
-                            foreach($all_vendor as $v_category){?>
+                            foreach($all_vendor as $v_vendor){?>
 
-                            <li><a href="#"><span class="pull-right">(50)</span></a>{{$v_category->vendor_name}}</a></li>
+                            <li><a href="{{URL::to('/product_by_vendor/'.$v_vendor->vendor_id)}}">{{$v_vendor->vendor_name}}</a></li>
                                 
 
                             <?php } ?>  
