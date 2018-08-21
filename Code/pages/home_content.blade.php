@@ -15,15 +15,16 @@
                                         <div class="product-overlay">
                                             <div class="overlay-content">
                                                 <h2>{{$v_published_product->book_price}}</h2>
-                                                <p>{{$v_published_product->book_name}}</p>
+                                                 <a href="{{URL::to('/view_product/'.$v_published_product->book_id)}}" >
+                                                <p>{{$v_published_product->book_name}}</p></a>
                                                 <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                             </div>
                                         </div>
                                 </div>
                                 <div class="choose">
                                     <ul class="nav nav-pills nav-justified">
-                                        <li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
-                                        <li><a href="#"><i class="fa fa-plus-square"></i>View Book</a></li>
+                                        <li><a href="#"><i class="fa fa-plus-square"></i>{{$v_published_product->vendor_name}}</a></li>
+                                        <li><a href="{{URL::to('/view_product/'.$v_published_product->book_id)}}"><i class="fa fa-plus-square"></i>View Book</a></li>
                                     </ul>
                                 </div>
                             </div>
