@@ -13,16 +13,21 @@
 						<div class="col-sm-7">
 							<div class="product-information"><!--/product-information-->
 								<img src="images/product-details/new.jpg" class="newarrival" alt="" />
-								<h2>{{$product_by_details->book_image}}</h2>
+								<h2>{{$product_by_details->book_name}}</h2>
 								<p>Color: {{$product_by_details->book_color}}</p>
 								<img src="{{URL::to('frontend/images/product-details/rating.png')}}" alt="" />
 								<span>
+									<span>{{$product_by_details->book_price}} Tk.</span>
+									<form action="{{url('/add-to-cart')}}" method="post">
+										{{ csrf_field() }}
 									<label>Quantity:</label>
-									<input type="text" value="3" />
-									<button type="button" class="btn btn-fefault cart">
+									<input name="qty" type="text" value="1" />
+									<input name="book_id" type="hidden" value="{{$product_by_details->book_id}}" />
+									<button type="submit" class="btn btn-fefault cart">
 										<i class="fa fa-shopping-cart"></i>
 										Add to cart
 									</button>
+								</form>
 								</span>
 								<p><b>Availability:</b> In Stock</p>
 								<p><b>Condition:</b> New</p>
@@ -60,6 +65,7 @@
 										</div>
 									</div>
 								</div>
+							</div>
 							<div class="tab-pane fade" id="tag" >
 								<div class="col-sm-3">
 									<div class="product-image-wrapper">

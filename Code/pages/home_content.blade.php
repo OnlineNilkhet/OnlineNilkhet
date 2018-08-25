@@ -17,7 +17,7 @@
                                                 <h2>{{$v_published_product->book_price}}</h2>
                                                  <a href="{{URL::to('/view_product/'.$v_published_product->book_id)}}" >
                                                 <p>{{$v_published_product->book_name}}</p></a>
-                                                <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                                <a href="{{URL::to('/view_product/'.$v_published_product->book_id)}}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                             </div>
                                         </div>
                                 </div>
