@@ -15,16 +15,17 @@
 					
 					<div class="col-sm-12 clearfix">
 						<div class="bill-to">
-							<p>Bill To</p>
+							<p>Shipping Details</p>
 							<div class="form-one">
-								<form>
+								<form action="{{url('/save-shipping-details')}}" method="post">
+									{{csrf_field() }}
 									
-									<input type="text" placeholder="Email*">
-									<input type="text" placeholder="First Name *">
-									<input type="text" placeholder="Last Name *">
-									<input type="text" placeholder="Address 1 *">
-									<input type="text" placeholder="Mobile Number *">
-									<input type="text" placeholder="City *">
+									<input type="text" name="shipping_email" placeholder="Email*">
+									<input type="text" name="shipping_first_name"  placeholder="First Name *">
+									<input type="text" name="shipping_last_name"  placeholder="Last Name *">
+									<input type="text" name="shipping_address"  placeholder="Address 1 *">
+									<input type="text" name="shipping_mobile_number"  placeholder="Mobile Number *">
+									<input type="text" name="shipping_city"  placeholder="City *">
 									<input type="submit" class="btn btn-default" value="Done">
 								</form>
 							</div>
@@ -32,12 +33,7 @@
 						</div>	
 				</div>
 			</div>
-			<div class="review-payment">
-				<h2>Review & Payment</h2>
-			</div>
-
 		
-			
 		</div>
 	</section> <!--/#cart_items-->
 
