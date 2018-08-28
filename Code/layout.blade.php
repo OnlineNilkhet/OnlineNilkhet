@@ -130,8 +130,17 @@
                                 <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                         <li><a href="shop.html">Products</a></li>
-                                        <li><a href="product-details.html">Product Details</a></li> 
-                                        <li><a href="{{URL::to('/login-check')}}">Checkout</a></li> 
+                                        <li><a href="product-details.html">Product Details</a></li>
+
+
+                                        <?php $customer_id=Session::get('customer_id'); ?>
+                                 <?php if($customer_id != Null) {?>
+                                <li><a href="{{URL::to('/checkout')}}">Checkout</a></li>
+                            <?php } else{?>
+                                 <li><a href="{{URL::to('/login-check')}}">Checkout</a></li>
+                             <?php } ?>
+
+                                       
                                         <li><a href="{{URL::to('/show-cart')}}">Cart</a></li> 
                                         
                                     </ul>
