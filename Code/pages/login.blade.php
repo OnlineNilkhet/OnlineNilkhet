@@ -33,7 +33,8 @@ include('slider')-->
 				<div class="col-sm-4 col-sm-offset-1">
 					<div class="login-form"><!--login form-->
 						<h2>Login to your account</h2>
-						<form action="#" method="">
+						<form action="{{url('/customer_login')}}" method="">
+							{{csrf_field() }}
 							<input type="email" required="" placeholder="Email" name="customer_email" />
 							<input type="password" placeholder="password" name="password"/>
 							
