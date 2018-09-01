@@ -27,10 +27,7 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="contactinfo">
-                            <ul class="nav nav-pills">
-                                <li><a href="#"><i class="fa fa-phone"></i> +2 95 01 88 821</a></li>
-                                <li><a href="#"><i class="fa fa-envelope"></i> info@domain.com</a></li>
-                            </ul>
+                          
                         </div>
                     </div>
                     <div class="col-sm-6">
@@ -173,12 +170,9 @@
                             <div class="item">
                             <?php } ?>
                                 <div class="col-sm-4">
-                                    <h1><span>O</span>NlineNilkhet</h1>
-                                    <h2>ABCDABCD</h2>
-                                    <p>aaaaaaaaaaaaaaabbbbbb
-                                        bbbbbbbbbbbbccccccc
-                                    ccccccccccdddddddddddddddd </p>
-                                    <button type="button" class="btn btn-default get">Get it now</button>
+                                    <h1><span>Discount 20 %</span></h1>
+                                    <button  type="button" class="btn btn-default get">
+                                        <a href="{{URL::to('/')}}">Get it now</button></a>
                                 </div>
                                 <div class="col-sm-8">
                                     <img src="{{URL::to($v_slider->slider_image)}}" class="girl img-responsive" alt="" />
