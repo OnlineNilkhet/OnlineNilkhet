@@ -6,12 +6,14 @@ use Illuminate\Http\Request;
 use DB;
 use App\Http\Requests;
 use Session;
+use App\Product;
 use Illuminate\support\Facades\Redirect;
 
 Session_start();
 
 class HomeController extends Controller
 {
+
     public function index()
     {
     		$all_published_product=DB::table('tb1_books')
@@ -19,8 +21,11 @@ class HomeController extends Controller
 					->join('tb1_vendor','tb1_books.vendor_id','=','tb1_vendor.vendor_id')
 					->select('tb1_books.*','tb1_category.category_name','tb1_vendor.vendor_name')
 					->where('tb1_books.publication_status',1)
-					->limit(6)
-					->get();
+                    ->inRandomOrder()
+                  ->orderBy('book_id',"DEC")
+                    ->limit(6)
+                    ->get();
+  
     	$manage_published_product=view('pages.home_content')
     		->with('all_published_product',$all_published_product);
     	return view ('layout')
@@ -29,6 +34,30 @@ class HomeController extends Controller
     	//return view ('vendor.add_product');
 
     	//return view('pages.home_content');
+    }
+
+    public function search(Request $request){
+
+      
+        $search = $request->search_data;
+        if ($search == '') {
+           return Redirect::to('/');
+        } else {
+            $Products = DB::table('tb1_books')
+
+                    ->join('tb1_category','tb1_books.category_id','=','tb1_category.category_id')
+                    ->join('tb1_vendor','tb1_books.vendor_id','=','tb1_vendor.vendor_id')
+                    ->select('tb1_books.*','tb1_category.category_name','tb1_vendor.vendor_name')
+                    ->where('book_name', 'like', '%' . $search . '%')->paginate(12);
+
+            $manage=view('pages.search')
+            ->with('Products',$Products);
+        return view ('layout')
+            ->with('pages.search',$manage);
+
+          //  return view('pages.search');
+
+        }
     }
 
     public function show_product_by_category($category_id)
@@ -51,8 +80,6 @@ class HomeController extends Controller
     {
         $product_by_vendor=DB::table('tb1_books')                   
                     ->join('tb1_vendor','tb1_books.vendor_id','=','tb1_vendor.vendor_id') 
-                    //->join('tb1_category','tb1_books.category_id','=','tb1_category.category_id')
-                    //->select('tb1_books.*','tb1_category.category_name','tb1_vendor.vendor_name')
                     ->select('tb1_books.*','tb1_vendor.vendor_name')
                     ->where('tb1_vendor.vendor_id',$vendor_id)
                     ->where('tb1_books.publication_status',1)
@@ -62,7 +89,6 @@ class HomeController extends Controller
             ->with('product_by_vendor',$product_by_vendor);
         return view ('layout')
             ->with('pages.home_content',$manage_product_by_vendor);
-
        
     }
      
