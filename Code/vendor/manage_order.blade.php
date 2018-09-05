@@ -5,10 +5,10 @@
 			<ul class="breadcrumb">
 				<li>
 					<i class="icon-home"></i>
-					<a href="index.html">Home</a> 
+					<a href="/dashboard">Home</a> 
 					<i class="icon-angle-right"></i>
 				</li>
-				<li><a href="#">Order Details</a></li>
+				<li><a href="manage-order">Order Details</a></li>
 			</ul>
 				<p class="alert-success">
 					<?php
@@ -54,7 +54,7 @@
 									
 
 									
-									<a class="btn btn-info" href="{{URL::to('/edit/'. $v_order->order_id )}}">
+									<a class="btn btn-info" href="{{URL::to('/view-order/'. $v_order->order_id )}}">
 										<i class="halflings-icon white edit"></i>  
 									</a>
 									<a class="btn btn-danger" href="{{URL::to('/delete/'. $v_order->order_id )}}" id="delete">

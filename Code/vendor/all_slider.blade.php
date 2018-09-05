@@ -5,7 +5,7 @@
 			<ul class="breadcrumb">
 				<li>
 					<i class="icon-home"></i>
-					<a href="index.html">Home</a> 
+					<a href="/dashboard">Home</a> 
 					<i class="icon-angle-right"></i>
 				</li>
 				<li><a href="#">Tables</a></li>
@@ -40,7 +40,7 @@
 						  <tbody>
 							<tr>
 								<td>{{ $v_slider->slider_id }}</td>
-								<td><img src="{{URL::to($v_slider->slider_image)}}" style="height: 80px; width: 200px;"></td>
+								<td><img src="{{URL::to($v_slider->slider_image)}}" style="height: 100px; width:100px;"></td>
 								
 								<td class="center">
 

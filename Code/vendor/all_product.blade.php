@@ -5,7 +5,7 @@
 			<ul class="breadcrumb">
 				<li>
 					<i class="icon-home"></i>
-					<a href="index.html">Home</a> 
+					<a href="/dashboard">Home</a> 
 					<i class="icon-angle-right"></i>
 				</li>
 				<li><a href="#">Tables</a></li>
@@ -75,7 +75,7 @@
 									<a class="btn btn-info" href="{{URL::to('/edit-product/'. $v_product->book_id )}}">
 										<i class="halflings-icon white edit"></i>  
 									</a>
-									<a class="btn btn-danger" href="{{URL::to('/delete-product/'. $v_product->book_id )}}" id="delete">
+									<a class="btn btn-danger" href="{{URL::to('/delete-product/'. $v_product->book_id )}}" >
 										<i class="halflings-icon white trash"></i> 
 									</a>
 								</td>

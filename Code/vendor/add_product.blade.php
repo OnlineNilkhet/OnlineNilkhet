@@ -4,12 +4,12 @@
 <ul class="breadcrumb">
 				<li>
 					<i class="icon-home"></i>
-					<a href="index.html">Home</a>
+					<a href="/dashboard">Home</a>
 					<i class="icon-angle-right"></i> 
 				</li>
 				<li>
 					<i class="icon-edit"></i>
-					<a href="#">Add Book</a>
+					<a href="/add-book">Add Book</a>
 				</li>
 			</ul>
 			
