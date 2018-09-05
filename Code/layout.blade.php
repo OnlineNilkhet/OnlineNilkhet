@@ -1,23 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html >
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <link rel="shortcut icon" href="{{URL::to('backend/img/favicon.ico')}}">
     <title>Home | Online Nilkhet</title>
-    <link href="{{asset('frontend/css/bootstrap.min.css')}}" rel="stylesheet">
+     <link href="{{asset('frontend/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('frontend/css/font-awesome.min.css')}}" rel="stylesheet">
-    <link href="{{asset('frontend/css/prettyPhoto.css')}}" rel="stylesheet">
-    <link href="{{asset('frontend/css/price-range.css')}}" rel="stylesheet">
-    <link href="{{asset('frontend/css/animate.css')}}" rel="stylesheet">
     <link href="{{asset('frontend/css/main.css')}}" rel="stylesheet">
-    <link href="{{asset('frontend/css/responsive.css')}}" rel="stylesheet">     
-   <link rel="shortcut icon" href="images/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{URL::to('frontend/images/ico/apple-touch-icon-144-precomposed.png')}}">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{URL::to('frontend/images/ico/apple-touch-icon-114-precomposed.png')}}">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{URL::to('frontend/images/ico/apple-touch-icon-72-precomposed.png')}}">
-    <link rel="apple-touch-icon-precomposed" href="{{URL::to('frontend/images/ico/apple-touch-icon-57-precomposed.png')}}">
 </head><!--/head-->
 
 <body>
@@ -62,12 +50,25 @@
                     <div class="col-sm-8">
                         <div class="shop-menu pull-right">
                             <ul class="nav navbar-nav">
-                                <li><a href="#"><i class="fa fa-user"></i> Account</a></li>
-                                 <?php $customer_id=Session::get('customer_id');
+
+                            <?php $customer_id=Session::get('customer_id');
                                  $shipping_id=Session::get('shipping_id');
                                 // print_r($customer_id);
                                  // print_r($shipping_id);
                     ?>
+
+
+                         <?php if($customer_id != NUll ) {?>
+                                <li><a href="{{URL::to('/customer-dashboard')}}"><i class="fa fa-crosshairs"></i>Account</a></li>
+
+                            <?php }else{?>
+                                 <li><a href="{{URL::to('/login-check')}}"></i>Account</a></li>
+                             <?php }?>
+
+
+                        
+
+
                          <?php if($customer_id != NUll && $shipping_id==NULL) {?>
                                 <li><a href="{{URL::to('/checkout')}}"><i class="fa fa-crosshairs"></i> Checkout</a></li>
                             <?php }elseif($customer_id != NUll && $shipping_id!=NULL){?>
@@ -81,10 +82,31 @@
 
                                 <?php $customer_id=Session::get('customer_id'); ?>
                                 <?php if($customer_id != Null) {?>
-                                <li><a href="{{URL::to('/customer-logout')}}"><i class="fa fa-lock"></i> Logout</a></li>
+
+                               
+
+                            <li class="dropdown">
+                            <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="halflings-icon white user">
+                                    
+                                </i>{{ Session::get('customer_name')}}
+
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                  
+                            <li><a href="{{URL::to('/customer-logout')}}"><i class="halflings-icon off"></i> Logout</a></li>
+                            </ul>
+                        </li>
+
+
                             <?php } else{?>
                                  <li><a href="{{URL::to('/login-check')}}"><i class="fa fa-lock"></i> Login</a></li>
                              <?php } ?>
+
+                         
+
+
                             </ul>
                         </div>
                     </div>
@@ -98,7 +120,7 @@
                     <div class="col-sm-9">
                         <div class="navbar-header">
                             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                                <span class="sr-only">Toggle navigation</span>
+                                <span class="sr-only"></span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
@@ -109,9 +131,9 @@
                             <li><a href="{{URL::to('/')}}" class="active">Home</a></li>
                                 <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
-                                        <li><a href="shop.html">Products</a></li>
-                                        <li><a href="product-details.html">Product Details</a></li>
-                                        <?php $customer_id=Session::get('customer_id'); ?>
+                                        <li><a href="#">Books</a></li>
+                                        
+                    <?php $customer_id=Session::get('customer_id'); ?>
                      <?php if($customer_id != Null) {?>
                             <li><a href="{{URL::to('/checkout')}}">Checkout</a></li>
                      <?php } else{?>
@@ -120,9 +142,12 @@
                             <li><a href="{{URL::to('/show-cart')}}">Cart</a></li>       
                                 </ul>
                             </li> 
-                            <li><a href="contact-us.html">Contact</a></li>
+                            <li><a href="#">Contact</a></li>
+                              <li><a href="{{URL::to('/suggestion')}}">Suggestion</a></li>
                             </ul>
+
                         </div>
+
                     </div>
                     
                 <div class="col-sm-3">
@@ -169,13 +194,13 @@
                             <?php } else {?>
                             <div class="item">
                             <?php } ?>
-                                <div class="col-sm-4">
-                                    <h1><span>Discount 20 %</span></h1>
+                                <div class="col-sm-8">
+                                    <h1><span>New Arrival</span></h1>
                                     <button  type="button" class="btn btn-default get">
                                         <a href="{{URL::to('/')}}">Get it now</button></a>
                                 </div>
-                                <div class="col-sm-8">
-                                    <img src="{{URL::to($v_slider->slider_image)}}" class="girl img-responsive" alt="" />
+                                <div class="col-sm-4">
+                                    <img src="{{URL::to($v_slider->slider_image)}}"  style="height: 250px; width: 200px;"  class="girl img-responsive" alt="" />
                                   
                                 </div>
                             </div>
@@ -203,7 +228,7 @@
                 <div class="col-sm-3">
                     <div class="left-sidebar">
                         <h2>Category</h2>
-                        <div class="panel-group category-products" id="accordian"><!--category-productsr-->
+                        <div class="panel-group category-products" id="accordian"><!--category--->
                             <div class="panel panel-default">
                              <?php
                                 $all_publisher_category=DB::table('tb1_category')
@@ -219,9 +244,9 @@
 
                      </div>
                             
-                        </div><!--/category-products-->
+                        </div><!--/category-->
                     
-                        <div class="brands_products"><!--brands_products-->
+                        <div class="brands_products">
                             <h2>Vendors</h2>
                             <div class="brands-name">
                                <ul class="nav nav-pills nav-stacked" >
@@ -234,7 +259,7 @@
                             <?php } ?>  
                                 </ul>
                             </div>
-                        </div><!--/brands_products-->
+                        </div>
                         
                       
                     
@@ -307,7 +332,7 @@
                     </div>
                     <div class="col-sm-2">
                         <div class="single-widget">
-                            <h2>About Shopper</h2>
+                            <h2>About Online Nilkhet</h2>
                             <ul class="nav nav-pills nav-stacked">
                                 <li><a href="#">Company Information</a></li>
                                 <li><a href="#">Careers</a></li>
@@ -319,7 +344,7 @@
                     </div>
                     <div class="col-sm-3 col-sm-offset-1">
                         <div class="single-widget">
-                            <h2>About Shopper</h2>
+                            <h2>About Online Nilkhet</h2>
                             <form action="#" class="searchform">
                                 <input type="text" placeholder="Your email address" />
                                 <button type="submit" class="btn btn-default"><i class="fa fa-arrow-circle-o-right"></i></button>
