@@ -65,7 +65,7 @@ class CategoryController extends Controller
 
      public function edit_category($category_id)
     {
-    	$this->VendorAuthCheck();
+    	
     	$category_info=DB::table('tb1_category') 
     		->where('category_id',$category_id)
     		->first();
@@ -111,6 +111,9 @@ class CategoryController extends Controller
             return Redirect::to('/vendor')->send();
         }
     }
+
+
+   
 
 }
 

@@ -14,6 +14,9 @@ Session_start();
 class HomeController extends Controller
 {
 
+public function suggestion(){
+    return view ('pages.suggestion');
+}
     public function index()
     {
     		$all_published_product=DB::table('tb1_books')
@@ -22,8 +25,8 @@ class HomeController extends Controller
 					->select('tb1_books.*','tb1_category.category_name','tb1_vendor.vendor_name')
 					->where('tb1_books.publication_status',1)
                     ->inRandomOrder()
-                  ->orderBy('book_id',"DEC")
-                    ->limit(6)
+                    ->orderBy('book_id',"DEC")
+                    ->limit(9)
                     ->get();
   
     	$manage_published_product=view('pages.home_content')
@@ -68,13 +71,15 @@ class HomeController extends Controller
                     ->select('tb1_books.*','tb1_category.category_name','tb1_vendor.vendor_name')
                     ->where('tb1_category.category_id',$category_id)
                     ->where('tb1_books.publication_status',1)
-                    ->limit(9)
+                    ->limit(5)
                     ->get();
         $manage_product_by_category=view('pages.category_by_product')
             ->with('product_by_category',$product_by_category);
         return view ('layout')
             ->with('pages.home_content',$manage_product_by_category);
     }
+
+   
 
  public function show_product_by_vendor($vendor_id)
     {
@@ -83,7 +88,8 @@ class HomeController extends Controller
                     ->select('tb1_books.*','tb1_vendor.vendor_name')
                     ->where('tb1_vendor.vendor_id',$vendor_id)
                     ->where('tb1_books.publication_status',1)
-                    ->limit(6)
+                    ->orderBy('book_id',"DEC")
+                    ->limit(15)
                     ->get();
         $manage_product_by_vendor=view('pages.vendor_by_product')
             ->with('product_by_vendor',$product_by_vendor);
@@ -108,6 +114,10 @@ class HomeController extends Controller
 
      }
 
+     public function customer_dashboard()
+     {
+        return view ('pages.customer_dashboard');
+     }
 
    
 

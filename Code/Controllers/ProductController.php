@@ -32,7 +32,7 @@ class ProductController extends Controller
     	return view ('vendor_layout')
     		->with('vendor.all_product',$manage_product);
 
-    	return view ('vendor.add_product');
+    	//return view ('vendor.add_product');
     }
     public function save_product(Request $request){
 
