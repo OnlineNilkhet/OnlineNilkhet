@@ -44,7 +44,7 @@
 									{{ csrf_field()}}
 									<input class="cart_quantity_input" type="text" name="qty" value="{{$v_contents->qty}}" autocomplete="off" size="2">
 									<input  type="hidden" name="rowId" value="{{$v_contents->rowId}}"  >
-									<input type="submit" name="submit" value="update" class="btn btn-sm btn-default">
+								
 								</form>
 							</div>
 							</td>

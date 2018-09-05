@@ -20,7 +20,7 @@
                                             <div class="overlay-content">
                                                 <h2>{{$v_category_by_product->book_price}}</h2>
                                                 <p>{{$v_category_by_product->book_name}}</p>
-                                                <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                                <a href="{{URL::to('/view_product/'.$v_category_by_product->book_id)}}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                             </div>
                                         </div>
                                 </div>
@@ -38,37 +38,22 @@
                         <?php } ?>
                     </div><!--features_items-->
                     
-                    <div class="recommended_items"><!--recommended_items-->
-                        <h2 class="title text-center">recommended items</h2>
-                        
-                        <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner">
-                               @foreach($product_by->chunk(3) as $chunk)
-                                <div class="item active"> 
-                                  @foreach($chunk as $item)
-                                    <div class="col-sm-4">
-                                        <div class="product-image-wrapper">
-                                            <div class="single-products">
-                                                <div class="productinfo text-center">
-                                                    <img src="{{asset('frontend/images/home/recommend1.jpg')}}" alt="" />
-                                                    <h2>$56</h2>
-                                                    <p>Easy Polo Black Edition</p>
-                                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                                </div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                   @endforeach 
-                                </div>
-                                @endforeach
-                            </div>
-                             <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
-                                <i class="fa fa-angle-left"></i>
-                              </a>
-                              <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
-                                <i class="fa fa-angle-right"></i>
-                              </a>          
+                        <div class="category-tab "><!--category-tab-->
+                        <div class="col-sm-12">
+                          
+                                <ul class="nav nav-tabs">
+                                    <?php
+                                $all_publisher_category=DB::table('tb1_category')
+                                        ->where('publication_status',1)
+                                        ->get();
+                                 foreach($all_publisher_category as $v_category){?>
+                                <li><a href="{{URL::to('/product_by_category/'.$v_category->category_id)}}" >{{$v_category->category_name}}</a>
+                                    </li>
+                                <?php } ?>
+                            </ul>
                         </div>
-                 </div><!--/recommended_items-->
+
+        
+                    </div><!--/category-tab-->
+                    
 @endsection

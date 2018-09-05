@@ -2,7 +2,7 @@
 @section('content')
 				
 				<div class="col-sm-9 padding-right">
-					<div class="product-details"><!--product-details-->
+					<div class="product-details">
 						<div class="col-sm-5">
 							<div class="view-product">
 								<img src="{{URL::to($product_by_details->book_image)}}" alt="" />
@@ -11,11 +11,11 @@
 							
 						</div>
 						<div class="col-sm-7">
-							<div class="product-information"><!--/product-information-->
-								<img src="images/product-details/new.jpg" class="newarrival" alt="" />
+							<div class="product-information">
+								
 								<h2>{{$product_by_details->book_name}}</h2>
 								<p>Color: {{$product_by_details->book_color}}</p>
-								<img src="{{URL::to('frontend/images/product-details/rating.png')}}" alt="" />
+								
 								<span>
 									<span>{{$product_by_details->book_price}} Tk.</span>
 									<form action="{{url('/add-to-cart')}}" method="post">
@@ -35,9 +35,9 @@
 								<p><b>Category:</b>{{$product_by_details->category_name}}</p>
 								
 								
-							</div><!--/product-information-->
+							</div>
 						</div>
-					</div><!--/product-details-->
+					</div>
 					
 					<div class="category-tab shop-details-tab"><!--category-tab-->
 						<div class="col-sm-12">
@@ -50,7 +50,7 @@
 						</div>
 						<div class="tab-content">
 							<div class="tab-pane fade" id="details" >
-								<p>{{$product_by_details->book_long_description}}</p>
+								<p>{{$product_by_details->book_short_description}}</p>
 							</div>
 							<div class="tab-pane fade" id="companyprofile" >
 								
@@ -72,7 +72,7 @@
 											<input type="email" placeholder="Email Address"/>
 										</span>
 										<textarea name="" ></textarea>
-										<b>Rating: </b> <img src="{{URL::to('frontend/images/product-details/rating.png')}}" alt="" />
+										
 										<button type="button" class="btn btn-default pull-right">
 											Submit
 										</button>
