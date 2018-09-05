@@ -5,9 +5,6 @@
 	<!-- start: Meta -->
 	<meta charset="utf-8">
 	<title>Vendor Dashboard</title>
-	<meta name="description" content="Metro Admin Template.">
-	<meta name="author" content="Łukasz Holeczek">
-	<meta name="keyword" content="Metro, Metro UI, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 	<!-- end: Meta -->
 	
 	<!-- start: Mobile Specific -->
@@ -19,11 +16,8 @@
 	<link href="{{asset('css/bootstrap-responsive.min.css')}}" rel="stylesheet">
 	<link id="base-style" href="{{asset('backend/css/style.css')}}" rel="stylesheet">
 	<link id="base-style-responsive" href="{{asset('backend/css/style-responsive.css')}}" rel="stylesheet">
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
 	
-		
-		
-		
+
 </head>
 
 <body>
@@ -36,7 +30,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="index.html"><span>Online Nilkhet</span></a>
+				<a class="brand" href="/dashboard"><span>Online Nilkhet</span></a>
 								
 				<!-- start: Header Menu -->
 				<div class="nav-no-collapse header-nav">
@@ -112,10 +106,10 @@
 						
 						
 						<li>
-							<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Products</span><span class="label label-important"> New </span></a>
+							<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Books</span><span class="label label-important"> New </span></a>
 							<ul>
-								<li><a class="submenu" href="{{URL::to('/add-product')}}"><i class="icon-file-alt"></i><span class="hidden-tablet"> Add Products</span></a></li>
-								<li><a class="submenu" href="{{URL::to('/all-product')}}"><i class="icon-file-alt"></i><span class="hidden-tablet"> All Products</span></a></li>
+								<li><a class="submenu" href="{{URL::to('/add-product')}}"><i class="icon-file-alt"></i><span class="hidden-tablet"> Add Bookss</span></a></li>
+								<li><a class="submenu" href="{{URL::to('/all-product')}}"><i class="icon-file-alt"></i><span class="hidden-tablet"> All Bookss</span></a></li>
 								
 							</ul>	
 						</li>
@@ -197,18 +191,8 @@
 		<script src="{{asset('backend/js/retina.js')}}"></script>
 		<script src="{{asset('backend/js/custom.js')}}"></script>
 	<!-- end: JavaScript-->
-	<script type="text/javascript" src="{{asset('https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js')}}"></script>
-	 <script>
-        $(document).on("click", "#delete", function(e) {
-         e.preventDefault();
-            var link = $(this).attr("href");
-            bootbox.confirm("Are you want to delete!!",function(confirmed){
-                if (confirmed) {
-                	window.location.href = link;
-                };
-            });
-        });
-    </script>
+	
+	 
 </body>
 
 </html>
