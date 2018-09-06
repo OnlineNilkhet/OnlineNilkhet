@@ -39,4 +39,41 @@ class Admincontroller extends Controller
     				return Redirect::to('/admin');
     			}
     }
+
+    public function inbox()
+    {
+
+        return view ('inbox');
+    }
+
+    public function transaction()
+    {
+
+        return view ('transaction');
+    }
+
+    public function booklist()
+    {
+        return view ('Allbooks');
+    }
+
+
+    public function vendors()
+    {
+        return view ('vendors');
+    }
+
+    public function category()
+    {
+        return view ('category');
+    }
+
+    public function calender()
+    {
+        return view ('calender');
+    }
+
+
+
+
 }
