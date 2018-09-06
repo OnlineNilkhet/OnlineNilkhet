@@ -5,39 +5,45 @@
 			<ul class="breadcrumb">
 				<li>
 					<i class="icon-home"></i>
-					<a href="index.html">Home</a> 
+					<a href="{{URL::to('/dashboard')}}">Home</a> 
 					<i class="icon-angle-right"></i>
 				</li>
-				<li><a href="#">Dashboard</a></li>
+				<li><a href="{{URL::to('/dashboard')}}">Dashboard</a></li>
 			</ul>
 
 			<div class="row-fluid">
 				
-				<div class="span3 statbox purple" onTablet="span6" onDesktop="span3">
+				<div class="span3 statbox blue" onTablet="span6" onDesktop="span3">
 					<div class="boxchart">5,6,7,2,0,4,2,4,8,2,3,3,2</div>
 					<div class="number">854<i class="icon-arrow-up"></i></div>
-					<div class="title">All books</div>
+					<div class="title">Books</div>
 					<div class="footer">
-						
+						<a href="#"> read full report</a>
 					</div>	
 				</div>
-				<div class="span3 statbox green" onTablet="span6" onDesktop="span3">
+				<div class="span3 statbox black" onTablet="span6" onDesktop="span3">
 					<div class="boxchart">1,2,6,4,0,8,2,4,5,3,1,7,5</div>
 					<div class="number">123<i class="icon-arrow-up"></i></div>
-					<div class="title">Total books sales</div>
-					
+					<div class="title">sale</div>
+					<div class="footer">
+						<a href="#"> read full report</a>
+					</div>
 				</div>
 				<div class="span3 statbox blue noMargin" onTablet="span6" onDesktop="span3">
-					<div class="boxchart">5,6,7,2,0,-4,-2,4,8,2,3,3,2</div>
-					<div class="number">982<i class="icon-arrow-up"></i></div>
-					<div class="title">Total orders</div>
-					
+					<div class="boxchart">5,6,7,2,0,4,2,4,8,2,3,3,2</div>
+					<div class="number">220<i class="icon-arrow-up"></i></div>
+					<div class="title">orders</div>
+					<div class="footer">
+						<a href="#"> read full report</a>
+					</div>
 				</div>
-				<div class="span3 statbox yellow" onTablet="span6" onDesktop="span3">
-					<div class="boxchart">7,2,2,2,1,-4,-2,4,8,,0,3,3,5</div>
-					<div class="number">678<i class="icon-arrow-down"></i></div>
-					<div class="title">All transication</div>
-					
+				<div class="span3 statbox black" onTablet="span6" onDesktop="span3">
+					<div class="boxchart">7,2,2,2,1,4,2,4,8,,0,3,3,5</div>
+					<div class="number">50<i class="icon-arrow-up"></i></div>
+					<div class="title">vendors</div>
+					<div class="footer">
+						<a href="#"> read full report</a>
+					</div>
 				</div>	
 				
 			</div>		
@@ -50,13 +56,13 @@
 					
 				</div>
 				
-				<div class="sparkLineStats span4 widget green" onTablet="span5" onDesktop="span4">
+				<div class="sparkLineStats span4 widget skyblue" onTablet="span5" onDesktop="span4">
 
                     <ul class="unstyled">
                         
                         <li><span class="sparkLineStats3"></span> 
                             Pageviews: 
-                            <span class="number">781</span>
+                            <span class="number">200</span>
                         </li>
                         <li><span class="sparkLineStats4"></span>
                             Pages / Visit: 
@@ -66,9 +72,7 @@
                             Avg. Visit Duration: 
                             <span class="number">00:02:58</span>
                         </li>
-                        <li><span class="sparkLineStats6"></span>
-                            Bounce Rate: <span class="number">59,83%</span>
-                        </li>
+
                         <li><span class="sparkLineStats7"></span>
                             % New Visits: 
                             <span class="number">70,79%</span>
@@ -86,14 +90,23 @@
 
 			</div>
 			
-			<div class="row-fluid hideInIE8 circleStats">
+					
+					
 				
 				
-				
-				
-				<div class="clearfix"></div>
-								
-			</div><!--/row-->
+				<div class="widget black span8 noMargin" onTablet="span12" onDesktop="span8">
+					<h2><span class="glyphicons wave"><i></i></span> Site Visit</h2>
+					<hr>
+					<div class="content">
+						 <div id="serverLoad2" style="height:224px;"></div>
+					</div>
+				</div>
+			
+			</div>
+			
+			
+						
+
 			
        
 
