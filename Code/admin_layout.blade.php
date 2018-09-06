@@ -5,9 +5,7 @@
 	<!-- start: Meta -->
 	<meta charset="utf-8">
 	<title>Admin dashboard</title>
-	<meta name="description" content="Metro Admin Template.">
-	<meta name="author" content="Łukasz Holeczek">
-	<meta name="keyword" content="Metro, Metro UI, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+	
 	<!-- end: Meta -->
 	
 	<!-- start: Mobile Specific -->
@@ -52,14 +50,14 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="index.html"><span>Metro</span></a>
+				<a class="brand" href="index.html"><span>Online Nilkhet</span></a>
 								
 				<!-- start: Header Menu -->
 				<div class="nav-no-collapse header-nav">
 					<ul class="nav pull-right">
 						<li class="dropdown hidden-phone">
 							<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-								<i class="halflings-icon white warning-sign"></i>
+								<i class="halflings-icon white bell"></i>
 							</a>
 							<ul class="dropdown-menu notifications">
 								<li class="dropdown-menu-title">
@@ -141,67 +139,7 @@
 								</li>	
 							</ul>
 						</li>
-						<!-- start: Notifications Dropdown -->
-						<li class="dropdown hidden-phone">
-							<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-								<i class="halflings-icon white tasks"></i>
-							</a>
-							<ul class="dropdown-menu tasks">
-								<li class="dropdown-menu-title">
- 									<span>You have 17 tasks in progress</span>
-									<a href="#refresh"><i class="icon-repeat"></i></a>
-								</li>
-								<li>
-                                    <a href="#">
-										<span class="header">
-											<span class="title">iOS Development</span>
-											<span class="percent"></span>
-										</span>
-                                        <div class="taskProgress progressSlim red">80</div> 
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-										<span class="header">
-											<span class="title">Android Development</span>
-											<span class="percent"></span>
-										</span>
-                                        <div class="taskProgress progressSlim green">47</div> 
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-										<span class="header">
-											<span class="title">Django Project For Google</span>
-											<span class="percent"></span>
-										</span>
-                                        <div class="taskProgress progressSlim yellow">32</div> 
-                                    </a>
-                                </li>
-								<li>
-                                    <a href="#">
-										<span class="header">
-											<span class="title">SEO for new sites</span>
-											<span class="percent"></span>
-										</span>
-                                        <div class="taskProgress progressSlim greenLight">63</div> 
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-										<span class="header">
-											<span class="title">New blog posts</span>
-											<span class="percent"></span>
-										</span>
-                                        <div class="taskProgress progressSlim orange">80</div> 
-                                    </a>
-                                </li>
-								<li>
-                            		<a class="dropdown-menu-sub-footer">View all tasks</a>
-								</li>	
-							</ul>
-						</li>
-						<!-- end: Notifications Dropdown -->
+						
 						<!-- start: Message Dropdown -->
 						<li class="dropdown hidden-phone">
 							<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
@@ -217,14 +155,14 @@
 										<span class="avatar"><img src="img/avatar.jpg" alt="Avatar"></span>
 										<span class="header">
 											<span class="from">
-										    	Łukasz Holeczek
+										    	Vendor 1
 										     </span>
 											<span class="time">
 										    	6 min
 										    </span>
 										</span>
                                         <span class="message">
-                                            Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
+                                            absahgasdg asdgaskgdkasd askgdukatdasjdbsm asdgaskdgk
                                         </span>  
                                     </a>
                                 </li>
@@ -233,62 +171,62 @@
 										<span class="avatar"><img src="img/avatar2.jpg" alt="Avatar"></span>
 										<span class="header">
 											<span class="from">
-										    	Megan Abott
+										    	Vendor 2
 										     </span>
 											<span class="time">
 										    	56 min
 										    </span>
 										</span>
                                         <span class="message">
-                                            Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
+                                            absahgasdg asdgaskgdkasd askgdukatdasjdbsm asdgaskdgk
                                         </span>  
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
-										<span class="avatar"><img src="img/avatar3.jpg" alt="Avatar"></span>
+<a href="#">
+										<span class="avatar"><img src="#" alt="Avatar"></span>
 										<span class="header">
 											<span class="from">
-										    	Kate Ross
+										    	Customer 1
 										     </span>
 											<span class="time">
 										    	3 hours
 										    </span>
 										</span>
                                         <span class="message">
-                                            Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
+                                            absahgasdg asdgaskgdkasd askgdukatdasjdbsm asdgaskdgk
                                         </span>  
                                     </a>
                                 </li>
 								<li>
                                     <a href="#">
-										<span class="avatar"><img src="img/avatar4.jpg" alt="Avatar"></span>
+										<span class="avatar"><img src="#" alt="Avatar"></span>
 										<span class="header">
 											<span class="from">
-										    	Julie Blank
+										    	Customer 2
 										     </span>
 											<span class="time">
 										    	yesterday
 										    </span>
 										</span>
                                         <span class="message">
-                                            Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
+                                            absahgasdg asdgaskgdkasd askgdukatdasjdbsm asdgaskdgk
                                         </span>  
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-										<span class="avatar"><img src="img/avatar5.jpg" alt="Avatar"></span>
+										<span class="avatar"><img src="#" alt="Avatar"></span>
 										<span class="header">
 											<span class="from">
-										    	Jane Sanders
+										    	Customer 3
 										     </span>
 											<span class="time">
-										    	Jul 25, 2012
+										    	Aug 12, 2018
 										    </span>
 										</span>
                                         <span class="message">
-                                            Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
+                                            absahgasdg asdgaskgdkasd askgdukatdasjdbsm asdgaskdgk
                                         </span>  
                                     </a>
                                 </li>
@@ -298,15 +236,12 @@
 							</ul>
 						</li>
 						<!-- end: Message Dropdown -->
-						<li>
-							<a class="btn" href="#">
-								<i class="halflings-icon white wrench"></i>
-							</a>
-						</li>
+						
 						<!-- start: User Dropdown -->
 						<li class="dropdown">
 							<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-								<i class="halflings-icon white user"></i> Łukasz Holeczek
+								<i class="halflings-icon white user"></i> 
+								Nilkhet Admin
 								<span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu">
@@ -314,7 +249,7 @@
  									<span>Account Settings</span>
 								</li>
 								<li><a href="#"><i class="halflings-icon user"></i> Profile</a></li>
-								<li><a href="login.html"><i class="halflings-icon off"></i> Logout</a></li>
+								<li><a href="{{URL::to('/logout')}}"><i class="halflings-icon off"></i> Logout</a></li>
 							</ul>
 						</li>
 						<!-- end: User Dropdown -->
@@ -334,16 +269,21 @@
 			<div id="sidebar-left" class="span2">
 				<div class="nav-collapse sidebar-nav">
 					<ul class="nav nav-tabs nav-stacked main-menu">
-						<li><a href="index.html"><i class="icon-bar-chart"></i><span class="hidden-tablet"> Dashboard</span></a></li>	
-						<li><a href="messages.html"><i class="icon-envelope"></i><span class="hidden-tablet"> All Books</span></a></li>
-						<li><a href="tasks.html"><i class="icon-tasks"></i><span class="hidden-tablet"> Add Books</span></a></li>
-						<li><a href="ui.html"><i class="icon-eye-open"></i><span class="hidden-tablet"> Inbox</span></a></li>
-						<li><a href="widgets.html"><i class="icon-dashboard"></i><span class="hidden-tablet"> Booklist</span></a></li>
+						<li><a href="{{URL::to('/dashboard')}}"><i class="icon-bar-chart"></i><span class="hidden-tablet"> Dashboard</span></a></li>	
+						<li><a href="{{URL::to('/inbox')}}"><i class="icon-envelope"></i><span class="hidden-tablet"> Inbox</span></a></li>
+						<li><a href="{{URL::to('/transaction')}}"><i class="icon-tasks"></i><span class="hidden-tablet"> Transactions</span></a></li>
+
+						<li>
+							<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Booklist</span> </a>
+							<ul>
+								<li><a class="submenu" href="{{URL::to('/allbooks')}}"><i class="icon-file-alt"></i><span class="hidden-tablet"> All Books</span></a></li>
+								<li><a class="submenu" href="{{URL::to('/category')}}"><i class="icon-file-alt"></i><span class="hidden-tablet"> Category</span></a></li>
+								<li><a class="submenu" href="{{URL::to('/vendors')}}"><i class="icon-file-alt"></i><span class="hidden-tablet"> Vendor</span></a></li>
+							</ul>	
+						</li>
 						
-						<li><a href="form.html"><i class="icon-edit"></i><span class="hidden-tablet"> Transaction</span></a></li>
-						<li><a href="chart.html"><i class="icon-list-alt"></i><span class="hidden-tablet"> Distribution</span></a></li>
+						<li><a href="{{URL::to('/calender')}}"><i class="icon-calendar"></i><span class="hidden-tablet"> Calendar</span></a></li>
 						
-						<li><a href="login.html"><i class="icon-lock"></i><span class="hidden-tablet"> Login Page</span></a></li>
 					</ul>
 				</div>
 			</div>
@@ -386,8 +326,8 @@
 	<footer>
 
 		<p>
-			<span style="text-align:left;float:left">&copy; 2013 <a href="http://bootstrapmaster.com/" alt="Bootstrap Themes">creativeLabs</a></span>
-			<span class="hidden-phone" style="text-align:right;float:right">Powered by: <a href="http://admintemplates.co/" alt="Bootstrap Admin Templates"></a></span>
+			<span style="text-align:left;float:left">&copy; 2018 <a href="http://bootstrapmaster.com/" alt="Bootstrap Themes"></a></span>
+			<span class="hidden-phone" style="text-align:right;float:right"><a href="http://admintemplates.co/" alt="Bootstrap Admin Templates">Group 4</a></span>
 		</p>
 
 	</footer>
@@ -407,7 +347,7 @@
     <script src="{{asset('backend/js/jquery.flot.js')}}"></script>
     <script src="{{asset('backend/js/jquery.flot.pie.js')}}"></script>
     <script src="{{asset('backend/js/jquery.flot.stack.js')}}"></script>
-    <script src="{{asset('backend/js/jquery.flot.resize.min.js')}}"></script>
+    <script src="{{asset('backendjs/jquery.flot.resize.min.js')}}"></script>
 	<script src="{{asset('backend/js/jquery.chosen.min.js')}}"></script>
 		<script src="{{asset('backend/js/jquery.uniform.min.js')}}"></script>
 		<script src="{{asset('backend/js/jquery.cleditor.min.js')}}"></script>

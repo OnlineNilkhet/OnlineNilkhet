@@ -7,9 +7,8 @@
 	<!-- start: Meta -->
 	<meta charset="utf-8">
 	<title>Admin login</title>
-	<meta name="description" content="Metro Admin Template.">
-	<meta name="author" content="Łukasz Holeczek">
-	<meta name="keyword" content="Metro, Metro UI, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+
+	
 	<!-- end: Meta -->
 	
 	<!-- start: Mobile Specific -->
@@ -21,7 +20,7 @@
 	<link href="{{asset('backend/css/bootstrap-responsive.min.css')}}" rel="stylesheet">
 	<link id="base-style" href="{{asset('backend/css/style.css')}}" rel="stylesheet">
 	<link id="base-style-responsive" href="{{asset('backend/css/style-responsive.css')}}" rel="stylesheet">
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.comcss?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
 	<!-- end: CSS -->
 	
 		
@@ -44,10 +43,9 @@
 			<div class="row-fluid">
 				<div class="login-box">
 					<div class="icons">
-						<a href="index.html"><i class="halflings-icon home"></i></a>
-						<a href="#"><i class="halflings-icon cog"></i></a>
+						
 					</div>
-					<h2>Login to your account</h2>
+					<h2>         Login to your account       </h2>
 					<form class="form-horizontal" action="{{url('/admin-dashboard')}}" method="post">
 						{{ csrf_field() }}
 						<fieldset>
@@ -67,12 +65,12 @@
 								<button type="submit" class="btn btn-primary">Login</button>
 							</div>
 							<div class="clearfix"></div>
-						}
+						
 					</form>
 					<hr>
 					<h3>Forgot Password?</h3>
 					<p>
-						No problem, <a href="#">click here</a> to get a new password.
+					 <a href="#">click here!</a> 
 					</p>	
 				</div><!--/span-->
 			</div><!--/row-->
